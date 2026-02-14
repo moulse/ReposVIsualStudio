@@ -391,6 +391,10 @@
         ],
         "measures": [
           {
+            "name": "test2Cal",
+            "expression": " 88888"
+          },
+          {
             "name": "testCal",
             "expression": " 66666"
           },
