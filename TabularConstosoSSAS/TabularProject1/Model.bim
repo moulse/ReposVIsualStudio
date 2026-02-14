@@ -1,0 +1,530 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1600,
+  "model": {
+    "culture": "fr-FR",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/DESKTOP-CU31MFJ;Contoso 5M",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "DESKTOP-CU31MFJ",
+            "database": "Contoso 5M"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "kind": "SQL",
+          "path": "desktop-cu31mfj;Contoso 5M",
+          "Username": "tabular_editor_user",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "Customer",
+        "columns": [
+          {
+            "name": "Address",
+            "dataType": "string",
+            "sourceColumn": "Address"
+          },
+          {
+            "name": "Age",
+            "dataType": "int64",
+            "sourceColumn": "Age"
+          },
+          {
+            "name": "Birthday",
+            "dataType": "dateTime",
+            "sourceColumn": "Birthday"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City"
+          },
+          {
+            "name": "Continent",
+            "dataType": "string",
+            "sourceColumn": "Continent"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country"
+          },
+          {
+            "name": "Country Code",
+            "dataType": "string",
+            "sourceColumn": "Country Code"
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey"
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name"
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State"
+          },
+          {
+            "name": "State Code",
+            "dataType": "string",
+            "sourceColumn": "State Code"
+          },
+          {
+            "name": "Zip Code",
+            "dataType": "string",
+            "sourceColumn": "Zip Code"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-CU31MFJ;Contoso 5M\",",
+                "    dbo_Customer = Source{[Schema=\"dbo\",Item=\"Customer\"]}[Data]",
+                "in",
+                "    dbo_Customer"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Date",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date"
+          },
+          {
+            "name": "Day of Week",
+            "dataType": "string",
+            "sourceColumn": "Day of Week"
+          },
+          {
+            "name": "Day of Week Number",
+            "dataType": "int64",
+            "sourceColumn": "Day of Week Number"
+          },
+          {
+            "name": "Day of Week Short",
+            "dataType": "string",
+            "sourceColumn": "Day of Week Short"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month"
+          },
+          {
+            "name": "Month Number",
+            "dataType": "int64",
+            "sourceColumn": "Month Number"
+          },
+          {
+            "name": "Month Short",
+            "dataType": "string",
+            "sourceColumn": "Month Short"
+          },
+          {
+            "name": "Quarter",
+            "dataType": "string",
+            "sourceColumn": "Quarter"
+          },
+          {
+            "name": "Working Day",
+            "dataType": "boolean",
+            "sourceColumn": "Working Day"
+          },
+          {
+            "name": "Working Day Number",
+            "dataType": "int64",
+            "sourceColumn": "Working Day Number"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "Year"
+          },
+          {
+            "name": "Year Month",
+            "dataType": "string",
+            "sourceColumn": "Year Month"
+          },
+          {
+            "name": "Year Month Number",
+            "dataType": "int64",
+            "sourceColumn": "Year Month Number"
+          },
+          {
+            "name": "Year Month Short",
+            "dataType": "string",
+            "sourceColumn": "Year Month Short"
+          },
+          {
+            "name": "Year Quarter",
+            "dataType": "string",
+            "sourceColumn": "Year Quarter"
+          },
+          {
+            "name": "Year Quarter Number",
+            "dataType": "int64",
+            "sourceColumn": "Year Quarter Number"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-CU31MFJ;Contoso 5M\",",
+                "    dbo_Date = Source{[Schema=\"dbo\",Item=\"Date\"]}[Data]",
+                "in",
+                "    dbo_Date"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Product",
+        "columns": [
+          {
+            "name": "Brand",
+            "dataType": "string",
+            "sourceColumn": "Brand"
+          },
+          {
+            "name": "Category",
+            "dataType": "string",
+            "sourceColumn": "Category"
+          },
+          {
+            "name": "Category Code",
+            "dataType": "string",
+            "sourceColumn": "Category Code"
+          },
+          {
+            "name": "Color",
+            "dataType": "string",
+            "sourceColumn": "Color"
+          },
+          {
+            "name": "Manufacturer",
+            "dataType": "string",
+            "sourceColumn": "Manufacturer"
+          },
+          {
+            "name": "Product Code",
+            "dataType": "string",
+            "sourceColumn": "Product Code"
+          },
+          {
+            "name": "Product Name",
+            "dataType": "string",
+            "sourceColumn": "Product Name"
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey"
+          },
+          {
+            "name": "Subcategory",
+            "dataType": "string",
+            "sourceColumn": "Subcategory"
+          },
+          {
+            "name": "Subcategory Code",
+            "dataType": "string",
+            "sourceColumn": "Subcategory Code"
+          },
+          {
+            "name": "Unit Cost",
+            "dataType": "decimal",
+            "sourceColumn": "Unit Cost"
+          },
+          {
+            "name": "Unit Price",
+            "dataType": "decimal",
+            "sourceColumn": "Unit Price"
+          },
+          {
+            "name": "Weight",
+            "dataType": "double",
+            "sourceColumn": "Weight"
+          },
+          {
+            "name": "Weight Unit Measure",
+            "dataType": "string",
+            "sourceColumn": "Weight Unit Measure"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-CU31MFJ;Contoso 5M\",",
+                "    dbo_Product = Source{[Schema=\"dbo\",Item=\"Product\"]}[Data]",
+                "in",
+                "    dbo_Product"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Sales",
+        "columns": [
+          {
+            "name": "Currency Code",
+            "dataType": "string",
+            "sourceColumn": "Currency Code"
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey"
+          },
+          {
+            "name": "Delivery Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Delivery Date"
+          },
+          {
+            "name": "Exchange Rate",
+            "dataType": "double",
+            "sourceColumn": "Exchange Rate"
+          },
+          {
+            "name": "Line Number",
+            "dataType": "int64",
+            "sourceColumn": "Line Number"
+          },
+          {
+            "name": "Net Price",
+            "dataType": "decimal",
+            "sourceColumn": "Net Price"
+          },
+          {
+            "name": "Order Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Order Date"
+          },
+          {
+            "name": "Order Number",
+            "dataType": "int64",
+            "sourceColumn": "Order Number"
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey"
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "sourceColumn": "Quantity"
+          },
+          {
+            "name": "StoreKey",
+            "dataType": "int64",
+            "sourceColumn": "StoreKey"
+          },
+          {
+            "name": "Unit Cost",
+            "dataType": "decimal",
+            "sourceColumn": "Unit Cost"
+          },
+          {
+            "name": "Unit Price",
+            "dataType": "decimal",
+            "sourceColumn": "Unit Price"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-CU31MFJ;Contoso 5M\",",
+                "    dbo_Sales = Source{[Schema=\"dbo\",Item=\"Sales\"]}[Data]",
+                "in",
+                "    dbo_Sales"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "testCal",
+            "expression": " 1221"
+          },
+          {
+            "name": "Total Sales",
+            "expression": " SUMX(Sales, Sales[Quantity]*Sales[Unit Price])"
+          }
+        ]
+      },
+      {
+        "name": "Store",
+        "columns": [
+          {
+            "name": "Close Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Close Date"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name"
+          },
+          {
+            "name": "Open Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Open Date"
+          },
+          {
+            "name": "Square Meters",
+            "dataType": "int64",
+            "sourceColumn": "Square Meters"
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status"
+          },
+          {
+            "name": "Store Code",
+            "dataType": "int64",
+            "sourceColumn": "Store Code"
+          },
+          {
+            "name": "StoreKey",
+            "dataType": "int64",
+            "sourceColumn": "StoreKey"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-CU31MFJ;Contoso 5M\",",
+                "    dbo_Store = Source{[Schema=\"dbo\",Item=\"Store\"]}[Data]",
+                "in",
+                "    dbo_Store"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "7f9edbcf-ecae-40ac-8183-93b665bcfd16",
+        "fromTable": "Sales",
+        "fromColumn": "CustomerKey",
+        "toTable": "Customer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "f65f68c5-96a8-4e2c-af29-f58aea334b67",
+        "fromTable": "Sales",
+        "fromColumn": "Order Date",
+        "toTable": "Date",
+        "toColumn": "Date"
+      },
+      {
+        "name": "24bcd829-3ef7-4f0f-b6c1-98030dd4ead9",
+        "fromTable": "Sales",
+        "fromColumn": "ProductKey",
+        "toTable": "Product",
+        "toColumn": "ProductKey"
+      },
+      {
+        "name": "452b3847-468b-4c97-936a-e825c6634c5f",
+        "fromTable": "Sales",
+        "fromColumn": "StoreKey",
+        "toTable": "Store",
+        "toColumn": "StoreKey"
+      }
+    ],
+    "roles": [
+      {
+        "name": "Untitled",
+        "modelPermission": "read",
+        "tablePermissions": [
+          {
+            "name": "Customer",
+            "filterExpression": "[Continent] == \"Europe\""
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "c2f73f97bbd7477c96de21f8effbf81a"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "700"
+      },
+      {
+        "name": "__TEdtr",
+        "value": "1"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
