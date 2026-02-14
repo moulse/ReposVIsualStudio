@@ -391,6 +391,10 @@
         ],
         "measures": [
           {
+            "name": "bracnhgithubcallc",
+            "expression": " 9999"
+          },
+          {
             "name": "test2Cal",
             "expression": " 88888"
           },
